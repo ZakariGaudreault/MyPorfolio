@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <nav id="standard_navbar"></nav>
+
+    
+
+    <main id="projects">
+
+        <section class="project" id="">
+
+            <img src="./assets/desktop/bakery.JPG" alt="GG" style="border: 10px solid #000; margin-bottom: 10px; max-width: 1000px;">
+
+            <article class="project_text">
+                <h1 align="center">Geek gourmet</h1>
+                <h2 align="center">Winter 2022</h2>
+                <p>
+                    
+Engaging in a collaborative classroom project for Web Programming II, a team effort involving three individuals, provided me with an invaluable opportunity to significantly augment my proficiency in a range of technologies, including React, MongoDB, JavaScript, HTML, and CSS. Through the development of a comprehensive website, the project encapsulated key functionalities such as user authentication, the implementation of customizable user settings, and the establishment of an intuitively navigable interface tailored to meet the needs of the average user. This hands-on experience not only broadened my technical skill set but also deepened my understanding of creating dynamic and user-friendly web applications.
+                </p>
+
+                <a class="repository-link" href="https://github.com/ZakariGaudreault/GeekGourmet"><button>Source</button></a>
+            </article>
+        </section>
+
+        <section class="project" id="">
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="./assets/desktop/Agenda.JPG" alt="RNG Hell Screenshot" style="border: 10px solid #000; margin-bottom: 10px;">
+                </div>
+
+                <div class="mySlides">
+                    <img src="./assets/desktop/Report.JPG" alt="RNG Hell Screenshot" style="border: 10px solid #000; margin-bottom: 10px;">
+                </div>
+
+                <div class="mySlides">
+                    <img src="./assets/desktop/Add.JPG" alt="RNG Hell Screenshot" style="border: 10px solid #000; margin-bottom: 10px;">
+                </div>
+            </div>
+            <article class="project_text">
+                <h1>WPF Calendar Application</h1>
+        
+                <h3>Fall 2022</h3>
+        
+                <p>
+                    A comprehensive software application designed to deliver an intuitive graphical user interface for efficient viewing and management of events and appointments. This project was a collaborative effort undertaken by my colleague and me during our Programming III class, where we tried advanced concepts of software development using C# and XAML. This experience provided a valuable opportunity to apply theoretical knowledge to real-world scenarios, emphasizing effective communication and seamless integration of back-end and front-end components.
+        
+                    
+                </p>
+        
+                <a class="repository-link" href="https://github.com/ZakariGaudreault/Agenda"><button>Source</button></a>
+            </article>
+        </section>
+        
+
+        <section class="project" id="">
+
+            <img src="./assets/desktop/stroodleOne.JPG" alt="Stroopy" style="border: 10px solid #000; margin-bottom: 10px;">
+
+            <article class="project_text">
+                <h1 align="center">Stroopy</h1>
+                <h2 align="center">Fall 2021</h2>
+                <p>
+                    Embark on a cognitive journey with the Stroop Effect Game, my first game made entirely by C# programming. This project represents not only a significant milestone in my coding journey but a testament to the versatility of C# as a language capable of delivering engaging and unconventional gaming experiences.
+                    The Stroop Effect Game stands as a captivating exploration of cognitive challenges, meticulously crafted within the visual confines of the console. The application offers a traditional gameplay by seamlessly integrating the renowned Stroop Effect into its core mechanics. What sets this project apart is its dedication to simplicity, relying on the familiar yet powerful command-line interface to deliver an immersive and visually stimulating gaming encounter.
+                </p>
+
+                <a class="repository-link" href="https://github.com/ZakariGaudreault/Stroopy"><button>Source</button></a>
+            </article>
+        </section>
+
+        
+
+
+
+        <section class="project" id="">
+
+            <img src="./assets/desktop/built.jpg" alt="Built" style="border: 10px solid #000; margin-bottom: 10px; max-width: 1000px;">
+
+            <article class="project_text">
+                <h1 align="center">First Computer built</h1>
+                <h2 align="center">Summer 2016</h2>
+                <p>
+                    In this photo we can see one of my favourite moment ever. My first computer that I built myself which would light up
+                    the spark for my love about computers. I had a solid budget of 1000$ to build something out of nothing and
+                    this photo was taken the moment the computer started for the first time. I have included the components that
+                    I have used.
+
+                </p>
+
+                <a class="repository-link" href="https://ca.pcpartpicker.com/list/Y3JZNG"><button>See the components</button></a>
+            </article>
+        </section>
+    </main>
+
+    <footer id="standard_footer"></footer>
+
+    <script src="scripts/partial_generator.js"></script>
+    <script>
+        // JavaScript for the slideshow
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change slide every 2 seconds
+        }
+    </script>
+    
+</body>
+
+</html>

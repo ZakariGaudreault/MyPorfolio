@@ -1,0 +1,430 @@
+/* Color Palette taken from https://colorpalettes.net/color-palette-4134/ */
+*{
+    box-sizing: border-box;
+    margin: -5;
+    color: #6e4d35;
+}
+body{
+    font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+    background-color: rgb(250, 233, 215); 
+}
+/* font sizes and spacing */
+/* Font sizes and spacing */
+h1 {
+    font-size: 3em;
+    line-height: 1.2; /* Adjust the line height to reduce spacing */
+    color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: 1.2; /* Adjust the line height to reduce spacing */
+    color: #111110;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h3 {
+    font-size: 1.17em;
+    line-height: 1.2; /* Adjust the line height to reduce spacing */
+    color: #000000;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5; /* Adjust the line height to reduce spacing */
+    color: #6e4d35;
+}
+
+footer{
+    font-size: 0.75em;
+    line-height: 1.1;
+    Color: #6e4d35;
+    margin-top: 1em;
+    border-top: 10px solid #000000; /* Add a bottom border with your desired style and color */
+}
+/* standard styling */
+a{
+    text-decoration: none;
+    color: #595d3d;
+}
+.inline-link{
+    text-decoration: underline;
+}
+ul{
+    list-style-type: none;
+}
+button{
+    padding: 1em;
+    border-radius: 2em;
+    background-color: #6e4d35;
+}
+a button{
+    color: #eeceb8;
+    margin-left: auto;
+    margin-right: auto;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #b4b5a7;
+}
+a button:hover{
+    color: #595d3d;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0; 
+}
+
+#index {
+    flex: 1; 
+}
+
+#about_me {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between sections as needed */
+}
+
+#about_me article {
+    flex: 1;
+    border: 2px solid #8B735B; /* Mocha Brown color code */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the total width */
+}
+
+#about_me h1 {
+    border-bottom: 2px solid #8B735B; /* Add a border at the bottom of each h1 */
+}
+
+#self_portrait {
+    max-width: 100%;
+    height: auto;
+}
+
+#standard_footer {
+    background-color: #8B735B; 
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+/* navbar */
+nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    z-index: 5;
+    background-color: rgb(158, 121, 85);
+    margin-bottom: 1em;
+    border-bottom: 10px solid #000000; /* Add a bottom border with your desired style and color */
+}
+body {
+    margin: 0; /* Remove default margin */
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center content horizontally */
+}
+.project_text {
+    grid-area: it;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #000000; /* Add border around the entire content */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    padding: 20px;
+}
+
+.project_text img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 10px solid #000000; /* Add border around the image */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    margin-bottom: 10px; /* Add margin between the image and text */
+}
+
+.project_text h1,
+.project_text h2,
+.project_text h3,
+.project_text p {
+    margin-bottom: 10px; /* Add margin between text elements */
+}
+#slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides img {
+    max-width: 100%;
+    border: 2px solid #000000; /* Add border around each image */
+ /* Add border-radius for rounded corners */
+  /* Add margin between the images */
+}
+.image-container {
+    margin: 1px; /* Add margin between images */
+    border: 10px solid #000000; /* Add border around each image */
+    border-radius: 5px;
+}
+#nav_label{
+    flex: 1;
+    text-align: center;
+}
+#nav_links{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 2;
+}
+
+
+article{
+    padding: 1em;
+    background-color: #f0f1f6;
+    border-radius: 2em;
+}
+/* footer */
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: #000000;
+}
+#footer_label {
+    flex: 1;
+    text-align: center;
+}
+
+#contact_links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+}
+
+#contact_links a i {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #8B735B; /* Mocha Brown color code */
+    margin-right: 10px; /* Adjust the spacing between icons and text */
+}
+
+/* Remove the text content for each link */
+#contact_links li a::before {
+    content: ""; /* Remove the text content */
+}
+
+#contact_links li:nth-child(1) a::before {
+    content: "";
+    background: url('../assets/desktop/github.png') no-repeat center center;
+    background-size: contain;
+    width: 48px; /* Adjust the width as needed */
+    height: 36px; /* Adjust the height as needed */
+    display: inline-block;
+
+
+}
+
+
+#contact_links li:nth-child(2) a::before {
+    content: "";
+    background: url('../assets/desktop/email.png') no-repeat center center;
+    background-size: contain;
+    width: 48px; /* Adjust the width as needed */
+    height: 36px; /* Adjust the height as needed */
+    display: inline-block;
+
+
+}
+
+#nav_links li a {
+    background-color: rgb(250, 233, 215);
+    padding: 1em;
+    border-radius: 1em;
+    border: 5px solid #040404; /* Add border style and width */
+    margin-top: 10px; /* Add units (e.g., px) to the margin-top property */
+}
+
+
+#contact_links li:nth-child(3) a::before {
+        content: "";
+    background: url('../assets/desktop/linkedin.png') no-repeat center center;
+    background-size: contain;
+    width: 48px; /* Adjust the width as needed */
+    height: 36px; /* Adjust the height as needed */
+    display: inline-block;
+}
+
+/* index */
+#self_portrait{
+    grid-area: s;
+    justify-self: center;
+}
+#introduction_text{
+    grid-area: i;
+    max-width: 1100px; /* Adjust the value as needed */
+    margin: auto; /* Center the element */
+    box-sizing: border-box; /* Include padding and border in the total width */
+    padding: 20px;
+    
+}
+#introduction_text h1 {
+    text-align: center;
+}
+
+#technologies_text {
+    grid-area: t;
+    margin: auto;
+    min-width: 450px; /* Set your desired minimum width */
+    max-width: 600px; /* Set your desired maximum width */
+    min-height: 550px;
+}
+#technologies_text h1 {
+    text-align: center;
+}
+
+
+#technologies_text > ul{
+    text-align: center;
+}
+#education_text{
+    grid-area: e;
+    margin: auto;
+}
+#education_text h1{
+    text-align: center;
+}
+#about_me{
+  display: grid;
+  margin: 0 2em;
+  grid-template-rows: repeat(2, 1fr);      
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5em;
+  grid-template-areas: 
+  'i s'
+  'e t';
+}
+/* projects */
+
+.project img{
+    grid-area: ii;
+    max-height: 100%;
+}
+.project_text{
+    grid-area: it;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+.project{
+    grid-template-areas: 
+    "ii it";
+}
+#projects {
+    margin-bottom: -20px; /* Adjust the margin-bottom as needed */
+}
+.repository-link{
+    margin-top: 1em;
+    align-self: center;
+}
+#steel_hostilities{
+    grid-area: sh;
+}
+#rng_hell_series{
+    grid-area: rng;
+}
+#rng_hell_screenshots{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#projects{
+    display: grid;
+    margin: 0 2em;
+    grid-template-rows: repeat(2, 1fr);      
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.5em;
+    grid-template-areas: 
+    "rng"
+    "sh";
+}
+textarea{
+    width: 100%;
+    max-width: 100%;
+    max-height: 5em;
+}
+input, select{
+    max-width: 40em;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+/* images */
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+/* Media Queries */
+@media(max-width: 590px){
+    #about_me, .project{
+        display: grid;
+        margin: 0;
+        grid-template-rows: 1fr 2fr;      
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .project{
+        grid-template-areas: 
+        "ii"
+        "it";
+    }
+    #about_me{
+        grid-template-areas: 
+        "ai"
+        "at";
+    }
+    #multi_platform{
+        margin-top: 5em;
+    }
+    #about_me img{
+        margin-bottom: -7em;
+    }
+    #standard_footer{
+        margin-top: -5em;
+    }
+    #nav_links{
+        flex-wrap: wrap;
+    }
+    #nav_links li{
+        display: inline-block;
+
+    }
+    footer{
+        flex-wrap: wrap;
+    }
+}
+@media(min-width: 590px) and (max-width: 1070px){
+    img{
+        display: flex;
+        align-self: center;
+    }
+}

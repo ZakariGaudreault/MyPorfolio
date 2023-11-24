@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+    <nav id="standard_navbar"></nav>
+
+    
+
+    <main id="projects">
+
+        <section class="project" id="steel_hostilitiesss"  style="margin-bottom: -400px;">
+
+            <article class="project_text">
+                <h1 align="center">FAQ</h1>
+                <h2 align="center">How can I be contacted?</h2>
+                <p align="center">
+                    On my footer you can click on the icons to contact me either by email or linkedin
+                </p>
+                <h2 align="center">How regularly do I update my github page?</h2>
+                <p align="center">
+                   I try my best to update it for every projects that I complete so
+                    we can say every three months as I will post many more projects soon.
+                </p>
+                <h2 align="center">Do I have another background that is not related to computer science?</h2>
+                <p align="center">
+                   Yes! I attended a DEP in École des métiers de la construction de Montréal to become electrician, but decided to change path for a computer science degree
+                </p>
+                <h2 align="center">What do I love the most about computer science?</h2>
+                <p align="center">
+                   Fixing hardware and Front-end
+                </p>
+                <h2 align="center">What is my favorite programming language?</h2>
+                <p align="center">
+                   JavaScript but I love learning other languages so much!
+                </p>
+                <h2 align="center">What are my programing skills?</h2>
+                <p align="center">
+                    JavaScript,Java,C#,HTML,CSS,ReactJS,XAML,MySQL,SQLite <br>,Java,Kotlin,Python,Bash,PowerShell
+                </p>
+                <h2 align="center">What about my education?</h2>
+                <p align="center">
+                  I invite you to see my linkedin for this! Look at the footer
+                </p>
+        
+            </article>
+        </section>
+
+  
+    </main>
+
+    <footer id="standard_footer"></footer>
+
+    <script src="scripts/partial_generator.js"></script>
+    <script>
+        // JavaScript for the slideshow
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change slide every 2 seconds
+        }
+    </script>
+    
+</body>
+
+</html>
