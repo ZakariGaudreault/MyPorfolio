@@ -1,4 +1,3 @@
-/* Color Palette taken from https://colorpalettes.net/color-palette-4134/ */
 *{
     box-sizing: border-box;
     margin: -5;
@@ -8,32 +7,31 @@ body{
     font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
     background-color: rgb(250, 233, 215); 
 }
-/* font sizes and spacing */
-/* Font sizes and spacing */
+
 h1 {
     font-size: 3em;
-    line-height: 1.2; /* Adjust the line height to reduce spacing */
+    line-height: 1.2;
     color: #000000;
     font-family: 'Segoe UI', sans-serif;
 }
 
 h2 {
     font-size: 1.5em;
-    line-height: 1.2; /* Adjust the line height to reduce spacing */
+    line-height: 1.2;
     color: #111110;
     font-family: 'Segoe UI', sans-serif;
 }
 
 h3 {
     font-size: 1.17em;
-    line-height: 1.2; /* Adjust the line height to reduce spacing */
+    line-height: 1.2;
     color: #000000;
     font-family: 'Segoe UI', sans-serif;
 }
 
 p {
     font-size: 1em;
-    line-height: 1.5; /* Adjust the line height to reduce spacing */
+    line-height: 1.5;
     color: #6e4d35;
 }
 
@@ -42,36 +40,43 @@ footer{
     line-height: 1.1;
     Color: #6e4d35;
     margin-top: 1em;
-    border-top: 10px solid #000000; /* Add a bottom border with your desired style and color */
+    border-top: 10px solid #000000;
 }
-/* standard styling */
+
 a{
     text-decoration: none;
     color: #595d3d;
 }
+
 .inline-link{
     text-decoration: underline;
 }
+
 ul{
     list-style-type: none;
 }
+
 button{
     padding: 1em;
     border-radius: 2em;
     background-color: #6e4d35;
 }
+
 a button{
     color: #eeceb8;
     margin-left: auto;
     margin-right: auto;
 }
+
 button:hover{
     cursor: pointer;
     background-color: #b4b5a7;
 }
+
 a button:hover{
     color: #595d3d;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -86,18 +91,18 @@ body {
 #about_me {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap between sections as needed */
+    gap: 20px;
 }
 
 #about_me article {
     flex: 1;
-    border: 2px solid #8B735B; /* Mocha Brown color code */
+    border: 2px solid #8B735B;
     padding: 20px;
-    box-sizing: border-box; /* Include padding in the total width */
+    box-sizing: border-box;
 }
 
 #about_me h1 {
-    border-bottom: 2px solid #8B735B; /* Add a border at the bottom of each h1 */
+    border-bottom: 2px solid #8B735B;
 }
 
 #self_portrait {
@@ -111,7 +116,7 @@ body {
     text-align: center;
     color: white;
 }
-/* navbar */
+
 nav {
     position: sticky;
     position: -webkit-sticky;
@@ -123,47 +128,53 @@ nav {
     z-index: 5;
     background-color: rgb(158, 121, 85);
     margin-bottom: 1em;
-    border-bottom: 10px solid #000000; /* Add a bottom border with your desired style and color */
-}
-body {
-    margin: 0; /* Remove default margin */
+    border-bottom: 10px solid #000000;
 }
 
 #projects {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
 }
 
 .project {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center content horizontally */
-}
-.project_text {
-    grid-area: it;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    border: 10px solid #000000; /* Add border around the entire content */
-    border-radius: 10px; /* Add border-radius for rounded corners */
-    padding: 20px;
+    justify-content: center;
 }
 
-.project_text img {
-    max-width: 100%;
-    max-height: 100%;
-    border: 10px solid #000000; /* Add border around the image */
-    border-radius: 5px; /* Add border-radius for rounded corners */
-    margin-bottom: 10px; /* Add margin between the image and text */
+.project img {
+    max-width: 1000px;
+    border: 10px solid #000;
+    margin-bottom: 10px;
+    flex: 1;
+    margin-right: 2px; 
+}
+
+.project_text {
+    flex: 1;
+    box-sizing: border-box;
+    border: 10px solid #000;
+    margin-bottom: 10px;
+    min-width: 350px;
 }
 
 .project_text h1,
 .project_text h2,
 .project_text h3,
 .project_text p {
-    margin-bottom: 10px; /* Add margin between text elements */
+    margin-bottom: 10px;
 }
+
+.project_text a {
+    display: block;
+    margin-top: 10px;
+}
+
+.project_text button {
+    width: 100%;
+}
+
 #slideshow-container {
     max-width: 100%;
     position: relative;
@@ -172,19 +183,20 @@ body {
 
 .mySlides img {
     max-width: 100%;
-    border: 2px solid #000000; /* Add border around each image */
- /* Add border-radius for rounded corners */
-  /* Add margin between the images */
+    border: 2px solid #000000; 
 }
+
 .image-container {
-    margin: 1px; /* Add margin between images */
-    border: 10px solid #000000; /* Add border around each image */
+    margin: 1px; 
+    border: 10px solid #000000; 
     border-radius: 5px;
 }
+
 #nav_label{
     flex: 1;
     text-align: center;
 }
+
 #nav_links{
     display: flex;
     align-items: center;
@@ -192,13 +204,12 @@ body {
     flex: 2;
 }
 
-
 article{
     padding: 1em;
     background-color: #f0f1f6;
     border-radius: 2em;
 }
-/* footer */
+
 footer{
     display: flex;
     align-items: center;
@@ -207,6 +218,7 @@ footer{
     padding: 1em;
     background-color: #000000;
 }
+
 #footer_label {
     flex: 1;
     text-align: center;
@@ -220,112 +232,72 @@ footer{
 }
 
 #contact_links a i {
-    font-size: 24px; /* Adjust the size as needed */
-    color: #8B735B; /* Mocha Brown color code */
-    margin-right: 10px; /* Adjust the spacing between icons and text */
+    font-size: 24px;
+    color: #8B735B;
+    margin-right: 10px;
 }
 
-/* Remove the text content for each link */
 #contact_links li a::before {
-    content: ""; /* Remove the text content */
+    content: "";
 }
 
 #contact_links li:nth-child(1) a::before {
     content: "";
     background: url('../assets/desktop/github.png') no-repeat center center;
     background-size: contain;
-    width: 48px; /* Adjust the width as needed */
-    height: 36px; /* Adjust the height as needed */
+    width: 48px;
+    height: 36px;
     display: inline-block;
-
-
 }
-
 
 #contact_links li:nth-child(2) a::before {
     content: "";
     background: url('../assets/desktop/email.png') no-repeat center center;
     background-size: contain;
-    width: 48px; /* Adjust the width as needed */
-    height: 36px; /* Adjust the height as needed */
+    width: 48px;
+    height: 36px;
     display: inline-block;
-
-
 }
 
 #nav_links li a {
     background-color: rgb(250, 233, 215);
     padding: 1em;
     border-radius: 1em;
-    border: 5px solid #040404; /* Add border style and width */
-    margin-top: 10px; /* Add units (e.g., px) to the margin-top property */
+    border: 5px solid #040404;
+    margin-top: 10px;
 }
 
-
 #contact_links li:nth-child(3) a::before {
-        content: "";
+    content: "";
     background: url('../assets/desktop/linkedin.png') no-repeat center center;
     background-size: contain;
-    width: 48px; /* Adjust the width as needed */
-    height: 36px; /* Adjust the height as needed */
+    width: 48px;
+    height: 36px;
     display: inline-block;
 }
 
-/* index */
 #self_portrait{
     grid-area: s;
     justify-self: center;
 }
+
 #introduction_text{
     grid-area: i;
-    max-width: 1100px; /* Adjust the value as needed */
-    margin: auto; /* Center the element */
-    box-sizing: border-box; /* Include padding and border in the total width */
+    max-width: 1100px;
+    margin: auto;
+    box-sizing: border-box;
     padding: 20px;
-    
 }
+
 #introduction_text h1 {
     text-align: center;
 }
-
-#technologies_text {
-    grid-area: t;
-    margin: auto;
-    min-width: 450px; /* Set your desired minimum width */
-    max-width: 600px; /* Set your desired maximum width */
-    min-height: 550px;
-}
-#technologies_text h1 {
-    text-align: center;
-}
-
-
-#technologies_text > ul{
-    text-align: center;
-}
-#education_text{
-    grid-area: e;
-    margin: auto;
-}
-#education_text h1{
-    text-align: center;
-}
-#about_me{
-  display: grid;
-  margin: 0 2em;
-  grid-template-rows: repeat(2, 1fr);      
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.5em;
-  grid-template-areas: 
-  'i s'
-  'e t';
-}
-/* projects */
 
 .project img{
     grid-area: ii;
     max-height: 100%;
 }
+
 .project_text{
     grid-area: it;
     margin: auto;
@@ -333,28 +305,23 @@ footer{
     flex-direction: column;
     max-width: 700px;
 }
+
 .project{
     grid-template-areas: 
     "ii it";
 }
+
 #projects {
-    margin-bottom: -20px; /* Adjust the margin-bottom as needed */
+    margin-bottom: -20px;
 }
+
 .repository-link{
     margin-top: 1em;
     align-self: center;
 }
-#steel_hostilities{
-    grid-area: sh;
-}
-#rng_hell_series{
-    grid-area: rng;
-}
-#rng_hell_screenshots{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+
+
+
 #projects{
     display: grid;
     margin: 0 2em;
@@ -365,17 +332,19 @@ footer{
     "rng"
     "sh";
 }
+
 textarea{
     width: 100%;
     max-width: 100%;
     max-height: 5em;
 }
+
 input, select{
     max-width: 40em;
     padding: 0.5em;
     border-radius: 1em;
 }
-/* images */
+
 img{
     max-width: 100%;
     max-height: 100%;
@@ -412,19 +381,21 @@ img{
         margin-top: -5em;
     }
     #nav_links{
-        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
     #nav_links li{
         display: inline-block;
-
+        margin-right: 10px;
     }
     footer{
         flex-wrap: wrap;
     }
 }
-@media(min-width: 590px) and (max-width: 1070px){
-    img{
-        display: flex;
-        align-self: center;
+
+@media(max-width: 590px){
+    #nav_links li {
+        display: inline-block;
     }
 }

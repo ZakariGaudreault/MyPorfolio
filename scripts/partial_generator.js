@@ -1,19 +1,15 @@
-/* partial_generator.js */
-
-// Standard Navbar Generator
 let standardNavbar = document.getElementById("standard_navbar");
 if (standardNavbar !== null) {
     standardNavbar.innerHTML = `
       
         <ul id="nav_links">
-        <h1 >Zakari Gaudreault St-Jean‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ </h1>
+        <h1 >Zakari Gaudreault St-Jean </h1>
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">My projects</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
         </ul>`;
 }
 
-// Standard Footer Generator
 let standardFooter = document.getElementById("standard_footer");
 if (standardFooter !== null) {
     standardFooter.innerHTML = `
