@@ -28,10 +28,10 @@ const options = {
         enabled: true,
         format: "{point.name}",
         style: {
-          color: "black",
+          color: "white",
           textOutline: "none",
           fontWeight: "bold",
-          size: "18px",
+          size: "55px",
         },
         className: "text-normal lg:text-lg",
       },
