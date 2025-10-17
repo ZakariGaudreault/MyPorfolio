@@ -70,13 +70,22 @@ export default function Projects() {
       setSlideIndex((prev) => (prev + 1) % slideshowImages.length);
     }, 2000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slideshowImages.length]); // ✅ dependency added
 
   return (
     <Container>
       <main id="projects" className="space-y-16">
         {projects.map(
-          ({ id, title, subtitle, description, imageSrc, imageAlt, repoLink, repoButtonText }) => (
+          ({
+            id,
+            title,
+            subtitle,
+            description,
+            imageSrc,
+            imageAlt,
+            repoLink,
+            repoButtonText,
+          }) => (
             <section key={id} className="project">
               <div className="flex justify-center mb-6">
                 {/* Border wraps the image naturally */}
