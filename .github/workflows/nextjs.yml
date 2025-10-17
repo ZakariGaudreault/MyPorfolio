@@ -1,12 +1,9 @@
-# 🚀 Deploy Next.js site to GitHub Pages
-# Documentation: https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
-
 name: Deploy Next.js site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Runs on push to main
-  workflow_dispatch:     # Allows manual trigger
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -22,69 +19,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout repository
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Detect package manager (npm/yarn/pnpm)
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=yarn" >> $GITHUB_OUTPUT
-          elif [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
-            echo "manager=pnpm" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=pnpm" >> $GITHUB_OUTPUT
-          else
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-          fi
-
-      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
 
-      # Restore Next.js build cache
-      - name: Restore Next.js cache
-        uses: actions/cache@v4
-        with:
-          path: .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.[jt]s', '**/*.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-
-
-      # Install dependencies
       - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: npm install
 
-      # Build the Next.js app
-      - name: Build Next.js site
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build && ${{ steps.detect-package-manager.outputs.runner }} next export
+      - name: Build and export Next.js site
+        run: |
+          npm run build
+          npm run export
 
-      # Disable Jekyll on GitHub Pages
-      - name: Create .nojekyll file
-        run: echo "" > ./out/.nojekyll
+      - name: Create .nojekyll
+        run: echo "" > out/.nojekyll
 
-      # Upload built site to GitHub Pages artifact storage
-      - name: Upload artifact
+      - name: Upload static files
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./out
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-//
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

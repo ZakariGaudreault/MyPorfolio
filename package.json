@@ -1,13 +1,15 @@
 {
-  "name": "kuihua-jac.github.io",
+  "name": "zakarigaudreault.github.io",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "export": "next export",
+  "start": "next start",
+  "lint": "next lint"
+},
+
   "dependencies": {
     "@octokit/request": "^8.1.6",
     "@octokit/types": "^12.3.0",
