@@ -29,7 +29,7 @@ export default function Projects({ username }: ProjectsProps) {
     "/stroodleThree.jpeg",
     "/stroodleFour.jpeg",
   ];
-
+  // Stroopy images name change
   // Slideshow states
   const [calendarIndex, setCalendarIndex] = React.useState(0);
   const [stroopyIndex, setStroopyIndex] = React.useState(0);
