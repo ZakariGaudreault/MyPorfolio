@@ -1,34 +1,36 @@
 import Link from "next/link";
 import Container from "./container";
 
+const basePath = process.env.NODE_ENV === "production" ? "/MyPorfolio" : "";
+
 export default function ProfessionalCareer() {
   const experiences = [
     {
       title: "Bureau Veritas - intern Software Specialist",
-      date: "January 2024  - Mai 2025",
+      date: "January 2024 - Mai 2025",
     },
     {
       title: "Patrick morin - Sales Associate",
-      date: "july 2021 - Current",
+      date: "July 2021 - Current",
     },
     {
       title: "Vidéotron - Sale Advisor",
-      date: "May 2023 - Octobe-2023",
+      date: "May 2023 - October 2023",
     },
-
   ];
 
   return (
     <Container>
       <div className="flex flex-row">
-        <div className="w-1/2 flex flex-col justify-center items-center ">
+        <div className="w-1/2 flex flex-col justify-center items-center">
           <h2 className="text-primary font-bold text-4xl mb-8">Career</h2>
           <div className="flex flex-col lg:flex-row gap-x-2 gap-y-2">
             <a
-              href="/resume.pdf"
+              href={`${basePath}/resume.pdf`}
+              download
               className="border-2 hover:border-primary rounded-2xl py-2 px-4 hover:text-primary hover:bg-secondary bg-primary border-secondary text-secondary"
             >
-              View resume
+              Download resume
             </a>
             <Link
               href="/portfolio"
