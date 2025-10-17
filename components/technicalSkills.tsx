@@ -20,7 +20,7 @@ const options = {
   },
   chart: {
     type: "packedbubble",
-    backgroundColor: "#CBCBD4",
+    backgroundColor: "#011307ff",
   },
   plotOptions: {
     packedbubble: {

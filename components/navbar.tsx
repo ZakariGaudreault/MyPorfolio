@@ -4,10 +4,9 @@ import Link from "next/link";
 
 export default function Navbar() {
   const pathName = usePathname();
-  const button = {
-    active: "text-primary",
-    inactive: "text-tertiary hover:text-primary",
-  };
+
+  // Replace this with your actual secondary color HEX code
+  const secondaryColorHex = "#34D399";
 
   const links = [
     { href: "/", label: "Home" },
@@ -15,11 +14,11 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-secondary border-gray-200">
+    <nav className="bg-tertiary border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <span className="self-center lg:text-3xl font-semibold whitespace-nowrap text-primary font-serif">
-            Kui Hua Wang
+            Zakari Gaudreault St-Jean
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
@@ -30,7 +29,7 @@ export default function Navbar() {
               );
             }}
             type="button"
-            className="text-primary bg-secondary hover:bg-primary border-2 hover:text-secondary border-primary font-medium rounded-2xl text-sm px-4 py-2 text-center"
+            className="text-primary bg-tertiary hover:bg-primary border-2 hover:text-tertiary border-primary font-medium rounded-2xl text-sm px-4 py-2 text-center"
           >
             Contact me
           </button>
@@ -40,7 +39,7 @@ export default function Navbar() {
             }}
             data-collapse-toggle="navbar-cta"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary rounded-2xl md:hidden hover:bg-primary hover:text-secondary focus:outline-none focus:ring-2"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary rounded-2xl md:hidden hover:bg-primary hover:text-tertiary focus:outline-none focus:ring-2"
             aria-controls="navbar-cta"
             aria-expanded="false"
           >
@@ -66,14 +65,21 @@ export default function Navbar() {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-cta"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-2xl  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-secondary ">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-2xl md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-tertiary">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
                   className={`${
-                    pathName === href ? button.active : button.inactive
+                    pathName === href
+                      ? "text-primary font-semibold"
+                      : "text-white hover:text-primary"
                   }`}
+                  style={
+                    pathName === href
+                      ? { textShadow: `0 0 5px ${secondaryColorHex}` }
+                      : {}
+                  }
                 >
                   {label}
                 </Link>

@@ -10,26 +10,22 @@ export default function PersonalPresentation() {
       </div>
       <div className="text-center">
         <AnimatedText
-          text="Welcome to my personal website. I'm a third year, soon to graduate, computer science student at John Abbott College."
-          delay={50}
+          text="Second year full-time student in computer science, aiming to expand my knowledge in the field of computer science.
+"
+          delay={25}
           className="text-secondary font-bold"
         />
         <AnimatedText
-          text="I am someone with a strong passion for solving logical problems and learning new technologies to continually challenge
-          myself."
-          delay={50}
+          text=" I
+          am a determined and hardworking individual, constantly driven by the desire to achieve excellence in everything I
+          undertake and to overcome new challenges."
+          delay={25}
           className="text-secondary font-bold"
         />
         <AnimatedText
-          text="Knowing we only live once, I aim to bring value to the table, whether it's in my day-to-day life or in my
-          working environment."
-          delay={50}
-          className="text-secondary font-bold"
-        />
-        <AnimatedText
-          text="Eager to learn new technologies and ways of solving problems. Seeking a position in
-          software development."
-          delay={50}
+          text=" My approach to computer science is not limited to just work, as it is a true
+          passion."
+          delay={25}
           className="text-secondary font-bold"
         />
       </div>

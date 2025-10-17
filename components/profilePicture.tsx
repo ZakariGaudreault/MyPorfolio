@@ -11,7 +11,7 @@ export default function ProfilePicture({
     <Image
       src={`${basePath}/profilepic.jpeg`}
       alt="Profile picture of website author"
-      width={724}
+      width={700}
       height={1086}
       className={`rounded-full object-cover object-top border-4 border-primary shadow-lg ${className}`}
     />
