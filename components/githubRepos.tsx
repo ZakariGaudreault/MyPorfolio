@@ -3,6 +3,11 @@ import React from "react";
 import Image from "next/image";
 import Container from "./container";
 
+// Props interface (optional, in case you want to pass a username in the future)
+interface ProjectsProps {
+  username?: string; // optional, you don’t have to use it
+}
+
 type Project = {
   id: string;
   title: string;
@@ -61,7 +66,7 @@ const projects: Project[] = [
   },
 ];
 
-export default function Projects() {
+export default function Projects({ username }: ProjectsProps) {
   const slideshowImages = ["/Agenda.jpeg", "/Report.jpeg", "/Add.jpeg"];
   const [slideIndex, setSlideIndex] = React.useState(0);
 
@@ -70,7 +75,7 @@ export default function Projects() {
       setSlideIndex((prev) => (prev + 1) % slideshowImages.length);
     }, 2000);
     return () => clearInterval(timer);
-  }, [slideshowImages.length]); // ✅ dependency added
+  }, [slideshowImages.length]);
 
   return (
     <Container>
@@ -88,7 +93,6 @@ export default function Projects() {
           }) => (
             <section key={id} className="project">
               <div className="flex justify-center mb-6">
-                {/* Border wraps the image naturally */}
                 {id === "wpf-calendar" ? (
                   <div className="border-4 border-black overflow-hidden">
                     <Image
