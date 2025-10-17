@@ -26,8 +26,8 @@ export default function Projects({ username }: ProjectsProps) {
   const stroopyImages = [
     "/stroodleOne.jpeg",
     "/stroodleTwo.jpeg",
-    "/stroodleThree.jpeg",
-    "/stroodleFour.jpeg",
+    "/StroodleThree.jpeg",
+    "/StroodleFour.jpeg",
   ];
   // Stroopy images name change
   // Slideshow states
