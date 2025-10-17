@@ -12,8 +12,9 @@ type Project = {
   title: string;
   subtitle: string;
   description: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  videoUrl?: string; // 👈 added
   repoLink: string;
   repoButtonText: string;
 };
@@ -21,7 +22,6 @@ type Project = {
 export default function Projects({ username }: ProjectsProps) {
   const basePath = process.env.NODE_ENV === "production" ? "/MyPorfolio" : "";
 
-  // Image sets
   const calendarImages = ["/Agenda.jpeg", "/Report.jpeg", "/Add.jpeg"];
   const stroopyImages = [
     "/stroodleOne.jpeg",
@@ -29,8 +29,7 @@ export default function Projects({ username }: ProjectsProps) {
     "/StroodleThree.jpeg",
     "/StroodleFour.jpeg",
   ];
-  // Stroopy images name change
-  // Slideshow states
+
   const [calendarIndex, setCalendarIndex] = React.useState(0);
   const [stroopyIndex, setStroopyIndex] = React.useState(0);
 
@@ -50,6 +49,27 @@ export default function Projects({ username }: ProjectsProps) {
   }, []);
 
   const projects: Project[] = [
+    {
+      id: "ConU",
+      title: "ConUHacks IX 3rd place winning project",
+      subtitle: "February 2025",
+      description:
+        "With the help of three teammates, we made 404 Lost & Found, which helps users report and locate lost items efficiently. Using advanced video recognition technology, it identifies close matches and provides navigation assistance to guide users to their lost belongings. We used Python (Streamlit frontend, FastAPI backend), OpenCV, ResNet, YOLOv8, MongoDB, Azure Blob Storage, Azure Container Registry, Docker, Terraform, and GitHub Actions.",
+      videoUrl: "https://www.youtube.com/embed/BHq4QkTe6PE", // 👈 embedded YouTube link
+      repoLink: "https://github.com/nic5694/404_Lost_And_Found",
+      repoButtonText: "Source",
+    },
+         {
+      id: "Container-farm",
+      title: "Cotainer farm",
+      subtitle: "Spring 2024",
+      description:
+        "IoT-based solution for remotely managing shipping container farms using a MAUI mobile app and Azure IoT,with sensors and actuators for optimal plant growth, geo-tracking, and security monitoring.",
+      imageSrc: "/farm.jpeg",
+      imageAlt: "Container farm",
+      repoLink: "https://github.com/ZakariGaudreault/automatic-container-farm",
+      repoButtonText: "Source",
+    },
     {
       id: "geek-gourmet",
       title: "Geek Gourmet",
@@ -107,13 +127,28 @@ export default function Projects({ username }: ProjectsProps) {
             description,
             imageSrc,
             imageAlt,
+            videoUrl,
             repoLink,
             repoButtonText,
           }) => (
-            <section key={id} className="project">
+            <section key={id} className="project text-center">
+              <h1 className="text-3xl font-semibold mb-1">{title}</h1>
+              <h2 className="text-xl mb-4 text-gray-300">{subtitle}</h2>
+
               <div className="flex justify-center mb-6">
-                {/* Calendar slideshow */}
-                {id === "wpf-calendar" ? (
+                {videoUrl ? (
+                  // 👇 YouTube video embed
+                  <div className="border-4 border-black overflow-hidden rounded-2xl w-[600px] h-[340px]">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={videoUrl}
+                      title={title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                ) : id === "wpf-calendar" ? (
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
                       src={`${basePath}${calendarImages[calendarIndex]}`}
@@ -124,7 +159,6 @@ export default function Projects({ username }: ProjectsProps) {
                     />
                   </div>
                 ) : id === "stroopy" ? (
-                  /* Stroopy slideshow */
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
                       src={`${basePath}${stroopyImages[stroopyIndex]}`}
@@ -135,11 +169,10 @@ export default function Projects({ username }: ProjectsProps) {
                     />
                   </div>
                 ) : (
-                  /* Static project image */
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
                       src={`${basePath}${imageSrc}`}
-                      alt={imageAlt}
+                      alt={imageAlt || title}
                       width={600}
                       height={600}
                       style={{ objectFit: "cover" }}
@@ -148,9 +181,7 @@ export default function Projects({ username }: ProjectsProps) {
                 )}
               </div>
 
-              <article className="project_text text-center">
-                <h1 className="text-3xl font-semibold">{title}</h1>
-                <h2 className="text-xl mb-4">{subtitle}</h2>
+              <article className="project_text text-center max-w-2xl mx-auto">
                 <p className="mb-4">{description}</p>
                 <a href={repoLink} target="_blank" rel="noopener noreferrer">
                   <button className="btn-primary">{repoButtonText}</button>

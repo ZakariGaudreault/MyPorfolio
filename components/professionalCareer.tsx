@@ -7,15 +7,15 @@ export default function ProfessionalCareer() {
   const experiences = [
     {
       title: "Bureau Veritas - intern Software Specialist",
-      date: "January 2024 - Mai 2025",
-    },
-    {
-      title: "Patrick morin - Sales Associate",
-      date: "July 2021 - Current",
+      date: "January 2024 - Mai 2024",
     },
     {
       title: "Vidéotron - Sale Advisor",
       date: "May 2023 - October 2023",
+    },
+     {
+      title: "Patrick morin - Sales Associate",
+      date: "July 2021 - Current",
     },
   ];
 

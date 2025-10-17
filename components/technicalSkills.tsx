@@ -16,7 +16,7 @@ const options = {
   },
   tooltip: {
     useHTML: true,
-    pointFormat: "<b>{point.name}:</b> {point.value}/100",
+    pointFormat: "<b>{point.name}:</b>",
   },
   chart: {
     type: "packedbubble",
@@ -47,7 +47,7 @@ const options = {
         { value: 90, name: "C#" },
         { value: 75, name: "Java" },
         { value: 80, name: "JavaScript" },
-        { value: 30, name: "Python" },
+        { value: 75, name: "Python" },
         { value: 80, name: "Bash" },
         { value: 70, name: "TypeScript" },
         { value: 60, name: "Kotlin" },
