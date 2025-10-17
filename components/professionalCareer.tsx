@@ -4,25 +4,18 @@ import Container from "./container";
 export default function ProfessionalCareer() {
   const experiences = [
     {
-      title: "Reservist @Canadian Armed Forces",
-      date: "March 2023 - Current",
+      title: "Bureau Veritas - intern Software Specialist",
+      date: "January 2024  - Mai 2025",
     },
     {
-      title: "Full Stack Developer Intern @Carbonia Web",
-      date: "January 2023 - Current",
+      title: "Patrick morin - Sales Associate",
+      date: "july 2021 - Current",
     },
     {
-      title: "Residential Real Estate Broker @Landmark Group",
-      date: "August 2022 - Current",
+      title: "Vidéotron - Sale Advisor",
+      date: "May 2023 - Octobe-2023",
     },
-    {
-      title: "Officer Cadet @Royal Military College",
-      date: "June 2020 - September 2021",
-    },
-    {
-      title: "Summer Camp Counselor @Centre des loisirs Lachine",
-      date: "June 2019 - August 2019",
-    },
+
   ];
 
   return (

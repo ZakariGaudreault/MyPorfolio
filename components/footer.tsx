@@ -5,7 +5,7 @@ export default function Footer() {
         <span className="text-sm text-primary sm:text-center">
           © 2023{" "}
           <a href="/" className="hover:underline hover:text-tertiary">
-            Kui Hua Wang™
+            Zakari Gaudreault St-Jean™
           </a>
         </span>
         <ul className="flex flex-wrap align-middle items-center text-sm font-medium text-primary sm:mt-0">
@@ -44,7 +44,7 @@ export default function Footer() {
               <span className="sr-only">LinkedIn account</span>
             </a>
             <a
-              href="mailto:wang.kuihua2003@gmail.com"
+              href="mailto:zakarigaudreault@hotmail.com"
               className="text-primary hover:text-tertiary ms-5"
             >
               <svg

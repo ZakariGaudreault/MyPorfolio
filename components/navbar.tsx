@@ -22,17 +22,9 @@ export default function Navbar() {
           </span>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            onClick={() => {
-              alert(
-                "Feature to come. On the meantime, my contact information is in the footer."
-              );
-            }}
-            type="button"
-            className="text-primary bg-tertiary hover:bg-primary border-2 hover:text-tertiary border-primary font-medium rounded-2xl text-sm px-4 py-2 text-center"
-          >
-            Contact me
-          </button>
+    
+      
+     
           <button
             onClick={() => {
               alert("Feature to come. Desktop version is working correctly.");

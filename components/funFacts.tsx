@@ -6,23 +6,17 @@ export default function FunFacts() {
     <Container className="border border-primary flex shadow-lg px-4 lg:w-2/3 py-4 justify-center">
       <ul className="flex flex-col justify-center items-center">
         <li className="w-full">
-          🚗 Electric car enthusiast. Have a question? Let me charge up and get
-          to you!
+          🏋️‍♂️ I love working out, I have been training for over 7 years!
         </li>
 
         <li className="w-full">
-          🏂 Amateur snowboarder and victim of the slopes, still in one piece
-          though!
+          💻 I built my first pc when I was 12 years old
         </li>
 
         <li className="w-full">
-          ♟️ If ever I'm not breaking my brain coding, I'm probably abusing it
-          playing chess ... or some video games.
+          🍔 I love burgers as much as I love coding.
         </li>
 
-        <li className="w-full">
-          😄 Good  or bad day, come to me and I'll make you laugh.
-        </li>
       </ul>
     </Container>
   );
