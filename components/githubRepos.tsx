@@ -3,10 +3,6 @@ import React from "react";
 import Image from "next/image";
 import Container from "./container";
 
-interface ProjectsProps {
-  username?: string;
-}
-
 type Project = {
   id: string;
   title: string;
@@ -18,22 +14,27 @@ type Project = {
   repoButtonText: string;
 };
 
-export default function Projects({ username }: ProjectsProps) {
+export default function Projects() {
   const basePath = process.env.NODE_ENV === "production" ? "/MyPorfolio" : "";
 
-  // Image sets
-  const calendarImages = ["/Agenda.jpeg", "/Report.jpeg", "/Add.jpeg"];
-  const stroopyImages = [
-    "/stroodleOne.jpeg",
-    "/stroodleTwo.jpeg",
-    "/stroodleThree.jpeg",
-    "/stroodleFour.jpeg",
+  // ✅ Slideshow images with basePath applied
+  const calendarImages = [
+    `${basePath}/Agenda.jpeg`,
+    `${basePath}/Report.jpeg`,
+    `${basePath}/Add.jpeg`,
   ];
 
-  // Slideshow states
+  const stroopyImages = [
+    `${basePath}/stroodleOne.jpeg`,
+    `${basePath}/stroodleTwo.jpeg`,
+    `${basePath}/stroodleThree.jpeg`,
+    `${basePath}/stroodleFour.jpeg`,
+  ];
+
   const [calendarIndex, setCalendarIndex] = React.useState(0);
   const [stroopyIndex, setStroopyIndex] = React.useState(0);
 
+  // ✅ Manage both slideshows
   React.useEffect(() => {
     const calendarTimer = setInterval(() => {
       setCalendarIndex((prev) => (prev + 1) % calendarImages.length);
@@ -47,17 +48,18 @@ export default function Projects({ username }: ProjectsProps) {
       clearInterval(calendarTimer);
       clearInterval(stroopyTimer);
     };
-  }, []);
+  }, [calendarImages.length, stroopyImages.length]);
 
+  // ✅ Project definitions
   const projects: Project[] = [
     {
       id: "geek-gourmet",
-      title: "Geek Gourmet",
+      title: "Geek gourmet",
       subtitle: "Winter 2023",
       description:
         "Engaging in a collaborative classroom project for Web Programming II...",
-      imageSrc: "/bakery.jpeg",
-      imageAlt: "Geek Gourmet",
+      imageSrc: `${basePath}/bakery.jpeg`,
+      imageAlt: "GG",
       repoLink: "https://github.com/ZakariGaudreault/GeekGourmet",
       repoButtonText: "Source",
     },
@@ -67,8 +69,8 @@ export default function Projects({ username }: ProjectsProps) {
       subtitle: "Fall 2022",
       description:
         "A comprehensive software application designed to deliver an intuitive GUI...",
-      imageSrc: "",
-      imageAlt: "Calendar slideshow",
+      imageSrc: "", // slideshow overrides this
+      imageAlt: "Calendar",
       repoLink: "https://github.com/ZakariGaudreault/Agenda",
       repoButtonText: "Source",
     },
@@ -76,10 +78,9 @@ export default function Projects({ username }: ProjectsProps) {
       id: "stroopy",
       title: "Stroopy",
       subtitle: "Fall 2021",
-      description:
-        "Embark on a cognitive journey with the Stroop Effect Game...",
-      imageSrc: "",
-      imageAlt: "Stroopy slideshow",
+      description: "Embark on a cognitive journey with the Stroop Effect Game...",
+      imageSrc: `${basePath}/stroodleOne.jpeg`, // fallback
+      imageAlt: "Stroopy",
       repoLink: "https://github.com/ZakariGaudreault/Stroopy",
       repoButtonText: "Source",
     },
@@ -89,8 +90,8 @@ export default function Projects({ username }: ProjectsProps) {
       subtitle: "Summer 2016",
       description:
         "In this photo we can see one of my favourite moments ever...",
-      imageSrc: "/built.jpeg",
-      imageAlt: "Built computer",
+      imageSrc: `${basePath}/built.jpeg`,
+      imageAlt: "Built",
       repoLink: "https://ca.pcpartpicker.com/list/Y3JZNG",
       repoButtonText: "See the components",
     },
@@ -112,11 +113,11 @@ export default function Projects({ username }: ProjectsProps) {
           }) => (
             <section key={id} className="project">
               <div className="flex justify-center mb-6">
-                {/* Calendar slideshow */}
+                {/* ✅ Show slideshow for calendar */}
                 {id === "wpf-calendar" ? (
-                  <div className="border-4 border-black overflow-hidden rounded-2xl">
+                  <div className="border-4 border-black overflow-hidden">
                     <Image
-                      src={`${basePath}${calendarImages[calendarIndex]}`}
+                      src={calendarImages[calendarIndex]}
                       alt={title}
                       width={600}
                       height={600}
@@ -124,10 +125,10 @@ export default function Projects({ username }: ProjectsProps) {
                     />
                   </div>
                 ) : id === "stroopy" ? (
-                  /* Stroopy slideshow */
-                  <div className="border-4 border-black overflow-hidden rounded-2xl">
+                  /* ✅ Show slideshow for Stroopy */
+                  <div className="border-4 border-black overflow-hidden">
                     <Image
-                      src={`${basePath}${stroopyImages[stroopyIndex]}`}
+                      src={stroopyImages[stroopyIndex]}
                       alt={title}
                       width={600}
                       height={600}
@@ -135,10 +136,10 @@ export default function Projects({ username }: ProjectsProps) {
                     />
                   </div>
                 ) : (
-                  /* Static project image */
-                  <div className="border-4 border-black overflow-hidden rounded-2xl">
+                  /* ✅ Default static image */
+                  <div className="border-4 border-black overflow-hidden">
                     <Image
-                      src={`${basePath}${imageSrc}`}
+                      src={imageSrc}
                       alt={imageAlt}
                       width={600}
                       height={600}
