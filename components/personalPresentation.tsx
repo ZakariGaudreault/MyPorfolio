@@ -12,14 +12,14 @@ export default function PersonalPresentation() {
         <AnimatedText
           text="Second year full-time student in computer science, aiming to expand my knowledge in the field of computer science.
 "
-          delay={25}
+          delay={18}
           className="text-secondary font-bold"
         />
         <AnimatedText
           text=" I
           am a determined and hardworking individual, constantly driven by the desire to achieve excellence in everything I
           undertake and to overcome new challenges."
-          delay={25}
+          delay={12}
           className="text-secondary font-bold"
         />
         <AnimatedText

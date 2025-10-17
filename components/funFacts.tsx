@@ -10,7 +10,7 @@ export default function FunFacts() {
         </li>
 
         <li className="w-full">
-          💻 I built my first pc when I was 12 years old
+          💻 I built my first pc when I was 13 years old
         </li>
 
         <li className="w-full">

@@ -5,7 +5,7 @@ const basePath = process.env.NODE_ENV === "production" ? "/MyPorfolio" : "";
 export default function ProfilePicture({
   className = "",
 }: {
-  className?: string; // use lowercase 'string' for type
+  className?: string; 
 }) {
   return (
     <Image

@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-secondary ">
       <div className="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-between">
         <span className="text-sm text-primary sm:text-center">
-          © 2023{" "}
+          © 2025{" "}
           <a href="/" className="hover:underline hover:text-tertiary">
             Zakari Gaudreault St-Jean™
           </a>
