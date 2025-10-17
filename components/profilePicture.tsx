@@ -6,7 +6,7 @@ export default function ProfilePicture({
 }) {
   return (
     <Image
-      src="/profilepic.jpeg"
+      src="https://zakarigaudreault.github.io/profilepic.jpeg"
       alt="Profile picture of website author"
       width={724}
       height={1086}
