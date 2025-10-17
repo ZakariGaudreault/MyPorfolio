@@ -12,9 +12,8 @@ type Project = {
   title: string;
   subtitle: string;
   description: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  videoUrl?: string; // 👈 added
+  imageSrc: string;
+  imageAlt: string;
   repoLink: string;
   repoButtonText: string;
 };
@@ -54,17 +53,18 @@ export default function Projects({ username }: ProjectsProps) {
       title: "ConUHacks IX 3rd place winning project",
       subtitle: "February 2025",
       description:
-        "With the help of three teammates, we made 404 Lost & Found, which helps users report and locate lost items efficiently. Using advanced video recognition technology, it identifies close matches and provides navigation assistance to guide users to their lost belongings. We used Python (Streamlit frontend, FastAPI backend), OpenCV, ResNet, YOLOv8, MongoDB, Azure Blob Storage, Azure Container Registry, Docker, Terraform, and GitHub Actions.",
-      videoUrl: "https://www.youtube.com/embed/BHq4QkTe6PE", // 👈 embedded YouTube link
+        "With the help of three teammates, we made 404 Lost & Found, which helps users report and locate lost items efficiently. Using advanced video recognition technology, it identifies close matches and provides navigation assistance to guide users to their lost belongings. We used Python (Streamlit frontend, FastAPI backend), OpenCV, ResNet, YOLOv8, MongoDB, Azure Blob Storage, Azure Container Registry, Docker, Terraform, GitHub Actions.",
+      imageSrc: "https://www.youtube.com/embed/BHq4QkTe6PE",
+      imageAlt: "404 Lost & Found demo video",
       repoLink: "https://github.com/nic5694/404_Lost_And_Found",
       repoButtonText: "Source",
     },
-         {
+    {
       id: "Container-farm",
-      title: "Cotainer farm",
+      title: "Container farm",
       subtitle: "Spring 2024",
       description:
-        "IoT-based solution for remotely managing shipping container farms using a MAUI mobile app and Azure IoT,with sensors and actuators for optimal plant growth, geo-tracking, and security monitoring.",
+        "IoT-based solution for remotely managing shipping container farms using a MAUI mobile app and Azure IoT, with sensors and actuators for optimal plant growth, geo-tracking, and security monitoring.",
       imageSrc: "/farm.jpeg",
       imageAlt: "Container farm",
       repoLink: "https://github.com/ZakariGaudreault/automatic-container-farm",
@@ -75,7 +75,7 @@ export default function Projects({ username }: ProjectsProps) {
       title: "Geek Gourmet",
       subtitle: "Winter 2023",
       description:
-        "Engaging in a collaborative classroom project for Web Programming II...",
+        "A comprehensive software application designed to deliver an intuitive graphical user interface for efficient viewing and management of events and appointments. This project was a collaborative effort undertaken during Programming III, emphasizing effective communication and seamless integration of back-end and front-end components.",
       imageSrc: "/bakery.jpeg",
       imageAlt: "Geek Gourmet",
       repoLink: "https://github.com/ZakariGaudreault/GeekGourmet",
@@ -86,7 +86,7 @@ export default function Projects({ username }: ProjectsProps) {
       title: "WPF Calendar Application",
       subtitle: "Fall 2022",
       description:
-        "A comprehensive software application designed to deliver an intuitive GUI...",
+        "Collaborative classroom project for Web Programming II involving React, MongoDB, JavaScript, HTML, and CSS. The project featured authentication, user settings, and a friendly UI, deepening understanding of dynamic web app creation.",
       imageSrc: "",
       imageAlt: "Calendar slideshow",
       repoLink: "https://github.com/ZakariGaudreault/Agenda",
@@ -97,7 +97,7 @@ export default function Projects({ username }: ProjectsProps) {
       title: "Stroopy",
       subtitle: "Fall 2021",
       description:
-        "Embark on a cognitive journey with the Stroop Effect Game...",
+        "A cognitive game built in C# exploring the Stroop Effect. This project marked a key milestone, demonstrating the power of C# to create engaging, console-based experiences blending psychology and programming.",
       imageSrc: "",
       imageAlt: "Stroopy slideshow",
       repoLink: "https://github.com/ZakariGaudreault/Stroopy",
@@ -107,8 +107,7 @@ export default function Projects({ username }: ProjectsProps) {
       id: "first-computer",
       title: "First Computer built",
       subtitle: "Summer 2016",
-      description:
-        "In this photo we can see one of my favourite moments ever...",
+      description: "In this photo we can see one of my favourite moments ever...",
       imageSrc: "/built.jpeg",
       imageAlt: "Built computer",
       repoLink: "https://ca.pcpartpicker.com/list/Y3JZNG",
@@ -127,28 +126,16 @@ export default function Projects({ username }: ProjectsProps) {
             description,
             imageSrc,
             imageAlt,
-            videoUrl,
             repoLink,
             repoButtonText,
           }) => (
             <section key={id} className="project text-center">
+              {/* Title above image/video */}
               <h1 className="text-3xl font-semibold mb-1">{title}</h1>
               <h2 className="text-xl mb-4 text-gray-300">{subtitle}</h2>
 
               <div className="flex justify-center mb-6">
-                {videoUrl ? (
-                  // 👇 YouTube video embed
-                  <div className="border-4 border-black overflow-hidden rounded-2xl w-[600px] h-[340px]">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={videoUrl}
-                      title={title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                ) : id === "wpf-calendar" ? (
+                {id === "wpf-calendar" ? (
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
                       src={`${basePath}${calendarImages[calendarIndex]}`}
@@ -168,11 +155,20 @@ export default function Projects({ username }: ProjectsProps) {
                       style={{ objectFit: "cover" }}
                     />
                   </div>
+                ) : id === "ConU" ? (
+                  <div className="w-full max-w-3xl aspect-video border-4 border-black overflow-hidden rounded-2xl">
+                    <iframe
+                      src={imageSrc}
+                      title={imageAlt}
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
                 ) : (
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
                       src={`${basePath}${imageSrc}`}
-                      alt={imageAlt || title}
+                      alt={imageAlt}
                       width={600}
                       height={600}
                       style={{ objectFit: "cover" }}
@@ -181,6 +177,7 @@ export default function Projects({ username }: ProjectsProps) {
                 )}
               </div>
 
+              {/* Description + Button below */}
               <article className="project_text text-center max-w-2xl mx-auto">
                 <p className="mb-4">{description}</p>
                 <a href={repoLink} target="_blank" rel="noopener noreferrer">
