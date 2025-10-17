@@ -11,7 +11,7 @@ export default function Footer() {
         <ul className="flex flex-wrap align-middle items-center text-sm font-medium text-primary sm:mt-0">
           <div className="flex items-center align-middle justify-center">
             <a
-              href="https://github.com/KuiHua-JAC"
+              href="https://github.com/ZakariGaudreault"
               className="text-primary hover:text-tertiary ms-5"
             >
               <svg
@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="sr-only">GitHub account</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/kui-hua-wang-435225198/"
+              href="https://www.linkedin.com/in/zakari-gaudreault-st-jean-37b3532a1/"
               className="text-primary hover:text-tertiary ms-5"
             >
               <svg

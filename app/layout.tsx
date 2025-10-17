@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Kui Hua Wang",
+  title: "Zakari Gaudreault St-Jean",
   description: "Welcome to my world.",
 };
 

@@ -48,10 +48,11 @@ const options = {
         { value: 75, name: "Java" },
         { value: 80, name: "JavaScript" },
         { value: 30, name: "Python" },
-        { value: 50, name: "Bash" },
+        { value: 80, name: "Bash" },
         { value: 70, name: "TypeScript" },
         { value: 60, name: "Kotlin" },
         { value: 50, name: "PHP" },
+        { value: 70, name: "C" },
       ],
     },
     {
@@ -83,10 +84,9 @@ const options = {
     {
       name: "Database Technologies",
       data: [
-        { value: 75, name: "SQL" },
-        { value: 75, name: "NoSQL" },
-        { value: 60, name: "MongoDB" },
-        { value: 50, name: "SQLAlchemy" },
+        { value: 80, name: "SQL" },
+        { value: 80, name: "NoSQL" },
+        { value: 75, name: "MongoDB" },
         { value: 70, name: "EFCore" },
       ],
     },
