@@ -21,7 +21,7 @@ export default function FunFacts() {
         </li>
 
         <li className="w-full">
-          😄 Good day or bad day, come to me and I'll make you laugh.
+          😄 Good  or bad day, come to me and I'll make you laugh.
         </li>
       </ul>
     </Container>
