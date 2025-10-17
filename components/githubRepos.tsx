@@ -3,9 +3,8 @@ import React from "react";
 import Image from "next/image";
 import Container from "./container";
 
-// Props interface (optional, in case you want to pass a username in the future)
 interface ProjectsProps {
-  username?: string; // optional, you don’t have to use it
+  username?: string; // optional, you can ignore if not needed
 }
 
 type Project = {
@@ -67,6 +66,7 @@ const projects: Project[] = [
 ];
 
 export default function Projects({ username }: ProjectsProps) {
+  const basePath = process.env.NODE_ENV === "production" ? "/MyPorfolio" : "";
   const slideshowImages = ["/Agenda.jpeg", "/Report.jpeg", "/Add.jpeg"];
   const [slideIndex, setSlideIndex] = React.useState(0);
 
@@ -96,7 +96,7 @@ export default function Projects({ username }: ProjectsProps) {
                 {id === "wpf-calendar" ? (
                   <div className="border-4 border-black overflow-hidden">
                     <Image
-                      src={slideshowImages[slideIndex]}
+                      src={`${basePath}${slideshowImages[slideIndex]}`}
                       alt={title}
                       width={600}
                       height={600}
@@ -106,7 +106,7 @@ export default function Projects({ username }: ProjectsProps) {
                 ) : (
                   <div className="border-4 border-black overflow-hidden">
                     <Image
-                      src={imageSrc}
+                      src={`${basePath}${imageSrc}`}
                       alt={imageAlt}
                       width={600}
                       height={600}
