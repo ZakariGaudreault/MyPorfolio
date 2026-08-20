@@ -9,10 +9,13 @@ export default function PersonalPresentation() {
         <ProfilePicture className={"lg:w-72 lg:h-72 w-48 h-48"} />
       </div>
       <div className="text-center">
+        <h1 className="sr-only">
+          Zakari Gaudreault St-Jean — Full-Stack Developer
+        </h1>
         <AnimatedText
-          text="Second year full-time student in computer science, aiming to expand my knowledge in the field of computer science.
+          text="Computer science student and full-stack developer, currently building Sinko CRM at Assurancia — a bilingual insurance platform I own end to end, from the database and serverless backend to the interface brokers use every day.
 "
-          delay={18}
+          delay={14}
           className="text-secondary font-bold"
         />
         <AnimatedText
@@ -28,6 +31,23 @@ export default function PersonalPresentation() {
           delay={25}
           className="text-secondary font-bold"
         />
+        <div className="mt-8 flex flex-wrap justify-center gap-2">
+          {[
+            "React",
+            "TypeScript",
+            "Supabase",
+            "PostgreSQL",
+            "C#",
+            "Tailwind CSS",
+          ].map((skill) => (
+            <span
+              key={skill}
+              className="text-xs px-3 py-1 rounded-full border border-secondary text-secondary"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
     </Container>
   );

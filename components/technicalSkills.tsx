@@ -79,6 +79,7 @@ const options = {
         { value: 10, name: "Angular" },
         { value: 30, name: "NextJS" },
         { value: 50, name: "Astro" },
+        { value: 70, name: "Vite" },
       ],
     },
     {
@@ -88,6 +89,22 @@ const options = {
         { value: 80, name: "NoSQL" },
         { value: 75, name: "MongoDB" },
         { value: 70, name: "EFCore" },
+        { value: 80, name: "PostgreSQL" },
+        { value: 80, name: "Supabase" },
+        { value: 70, name: "Row-Level Security" },
+      ],
+    },
+    {
+      name: "Cloud & DevOps",
+      data: [
+        { value: 75, name: "Serverless functions" },
+        { value: 70, name: "Deno" },
+        { value: 70, name: "Vercel" },
+        { value: 60, name: "Azure" },
+        { value: 65, name: "Docker" },
+        { value: 55, name: "Terraform" },
+        { value: 65, name: "GitHub Actions" },
+        { value: 60, name: "REST / SOAP APIs" },
       ],
     },
     {

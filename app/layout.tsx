@@ -6,8 +6,27 @@ import Navbar from "@/components/navbar";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Zakari Gaudreault St-Jean",
-  description: "Welcome to my world.",
+  metadataBase: new URL("https://zakarigaudreault.github.io/MyPorfolio"),
+  title: "Zakari Gaudreault St-Jean — Full-Stack Developer",
+  description:
+    "Full-stack developer in Montreal. Currently building Sinko CRM, a bilingual insurance platform, at Assurancia. React, TypeScript, Supabase, C# and .NET.",
+  keywords: [
+    "Zakari Gaudreault St-Jean",
+    "full-stack developer",
+    "software developer",
+    "React",
+    "TypeScript",
+    "Supabase",
+    "Next.js",
+    "Montreal",
+  ],
+  authors: [{ name: "Zakari Gaudreault St-Jean" }],
+  openGraph: {
+    title: "Zakari Gaudreault St-Jean — Full-Stack Developer",
+    description:
+      "Full-stack developer in Montreal. Currently building Sinko CRM, a bilingual insurance platform, at Assurancia.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

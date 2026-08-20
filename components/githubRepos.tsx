@@ -16,6 +16,10 @@ type Project = {
   imageAlt: string;
   repoLink: string;
   repoButtonText: string;
+  role?: string;
+  featured?: boolean;
+  highlights?: string[];
+  tech?: string[];
 };
 
 export default function Projects({ username }: ProjectsProps) {
@@ -48,6 +52,42 @@ export default function Projects({ username }: ProjectsProps) {
   }, []);
 
   const projects: Project[] = [
+    {
+      id: "sinko-crm",
+      title: "Sinko CRM — FPQ No 5 replacement-insurance platform",
+      subtitle: "2026 · Assurancia (insurance brokerage network)",
+      role: "Sole full-stack developer",
+      featured: true,
+      description:
+        "A bilingual (FR/EN) web platform that runs the full lifecycle of an FPQ No 5 replacement-insurance product for a network of insurance brokerages — from generating a quote, to issuing and financing the contract, to managing and cancelling policies, to the monthly bordereau the brokerage sends its insurer. I owned the product end to end: architecture, database, backend, frontend, integrations and UX.",
+      highlights: [
+        "Quoting & pricing engine — FPQ No 5 rate grid with tax-bracket logic, vehicle-eligibility rules and instant premium calculation, with branded PDF quote generation.",
+        "Policy lifecycle — contract binding, an in-app policy manager, client-info editing, and a cancellation flow implementing the insurer's official pro-rata refund formula with automated client + broker emails.",
+        "Financing integration — reverse-engineered a legacy SOAP/XML API (Imperial PFS) end to end: auth, request construction, payment/e-signature links and the redirect flow that returns the broker to a validated contract.",
+        "Multi-tenant access control — superadmin, cabinet admin and broker roles enforced with Postgres Row-Level Security across ~10 serverless edge functions.",
+        "Self-service admin — editable rate grids, tax brackets, email templates, marketing content, cabinet management and sales tiers, so non-technical staff run the product without a developer.",
+        "Reporting — a 27-column monthly insurer bordereau (Excel export) with automated cancellation-credit calculations.",
+        "Engagement — analytics dashboard with a cabinet/broker leaderboard and performance tiers, real-time broker-to-broker chat, announcements/notifications, and an in-portal AI assistant (RAG-ready) for product questions.",
+        "Applied Epic (agency-management system) SDK connection established for pushing policies into the insurer's core system.",
+      ],
+      tech: [
+        "React 19",
+        "Vite",
+        "Tailwind CSS",
+        "Supabase",
+        "PostgreSQL",
+        "Row-Level Security",
+        "Deno Edge Functions",
+        "Supabase Realtime",
+        "Vercel",
+        "Resend",
+        "SOAP/XML",
+      ],
+      imageSrc: "",
+      imageAlt: "Sinko CRM",
+      repoLink: "",
+      repoButtonText: "",
+    },
     {
       id: "ConU",
       title: "ConUHacks IX 3rd place winning project",
@@ -128,13 +168,35 @@ export default function Projects({ username }: ProjectsProps) {
             imageAlt,
             repoLink,
             repoButtonText,
+            role,
+            featured,
+            highlights,
+            tech,
           }) => (
-            <section key={id} className="project text-center">
+            <section
+              key={id}
+              className={`project text-center ${
+                featured
+                  ? "border border-secondary rounded-2xl p-6 lg:p-10 bg-black/30 shadow-lg"
+                  : ""
+              }`}
+            >
+              {featured && (
+                <p className="inline-block text-xs uppercase tracking-widest text-secondary border border-secondary rounded-full px-3 py-1 mb-4">
+                  Featured project
+                </p>
+              )}
+
               {/* Title above image/video */}
               <h1 className="text-3xl font-semibold mb-1">{title}</h1>
-              <h2 className="text-xl mb-4 text-gray-300">{subtitle}</h2>
+              <h2 className="text-xl mb-2 text-gray-300">{subtitle}</h2>
+              {role && (
+                <p className="text-sm text-secondary font-semibold mb-4">
+                  {role}
+                </p>
+              )}
 
-              <div className="flex justify-center mb-6">
+              <div className={`flex justify-center ${featured ? "" : "mb-6"}`}>
                 {id === "wpf-calendar" ? (
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
@@ -164,7 +226,7 @@ export default function Projects({ username }: ProjectsProps) {
                       className="w-full h-full"
                     />
                   </div>
-                ) : (
+                ) : imageSrc ? (
                   <div className="border-4 border-black overflow-hidden rounded-2xl">
                     <Image
                       src={`${basePath}${imageSrc}`}
@@ -174,15 +236,51 @@ export default function Projects({ username }: ProjectsProps) {
                       style={{ objectFit: "cover" }}
                     />
                   </div>
-                )}
+                ) : null}
               </div>
 
               {/* Description + Button below */}
               <article className="project_text text-center max-w-2xl mx-auto">
                 <p className="mb-4">{description}</p>
-                <a href={repoLink} target="_blank" rel="noopener noreferrer">
-                  <button className="btn-primary">{repoButtonText}</button>
-                </a>
+
+                {highlights && (
+                  <ul className="text-left space-y-3 mb-6">
+                    {highlights.map((highlight) => (
+                      <li key={highlight} className="flex gap-x-3">
+                        <span aria-hidden="true" className="text-secondary">
+                          ▸
+                        </span>
+                        <span className="text-sm text-gray-200">
+                          {highlight}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {tech && (
+                  <ul className="flex flex-wrap justify-center gap-2 mb-6">
+                    {tech.map((t) => (
+                      <li
+                        key={t}
+                        className="text-xs px-2 py-1 rounded-full border border-secondary text-secondary"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {repoLink ? (
+                  <a href={repoLink} target="_blank" rel="noopener noreferrer">
+                    <button className="btn-primary">{repoButtonText}</button>
+                  </a>
+                ) : (
+                  <p className="text-xs text-gray-400 italic">
+                    Private client codebase — happy to walk through the
+                    architecture on request.
+                  </p>
+                )}
               </article>
             </section>
           )
